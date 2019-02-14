@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- HOME SECTION -->
+<header id="home-section" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="dark-overlay">
+    <div class="home-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h4>{{ main.main_title }}</h4>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'partials/_carousel.html' %}
+  </div>
+</header>
+
+<section id="explore-head-section" class="banner bg-primary" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">{{ careers.sub_title}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="create-head-section" class="bg-light text-muted" class="banner bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1>{{ apply.city }}</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="create-head-section" class="bg-light text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <div class="p-3">
+          <h2>{{ job_ad.title }}</h2>
+        </div>
+        <div class="p-3">
+          <p>{{ job_ad.ad }}</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="p-3">
+          <h3><u>{{ job_ad.sub_header_1 }}</u></h3>
+          <p>{{ job_ad.bullet_1 }}</p>
+          <p>{{ job_ad.bullet_2 }}</p>
+          <p>{{ job_ad.bullet_3 }}</p>
+          <p>{{ job_ad.bullet_4 }}</p>
+          <p>{{ job_ad.bullet_5 }}</p>
+        </div>
+        <div class="p-3">
+          <h3><u>{{ job_ad.sub_header_2 }}</u></h3>
+          <p>{{ job_ad.second_bullet_1 }}</p>
+          <p>{{ job_ad.second_bullet_2 }}</p>
+          <p>{{ job_ad.second_bullet_3 }}</p>
+          <p>{{ job_ad.second_bullet_4 }}</p>
+          <p>{{ job_ad.second_bullet_5 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="bg-light text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="p-3 mt-5">
+          <h1>Apply</h1>
+          <p>Take The First Step In Your New Career</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+
+    <form class="text-center col-md-6 py-3" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <!-- <input type="file" name="document" value="resume"> -->
+      <p>Resume</p>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <div class="input-group">
+        <label class="input-group-btn">
+          <span class="btn bg-blue">
+            Browse&hellip; <input id="my-file-selector" name='document' type="file" style="display:none;" onchange="$('#upload-file-info').val($(this).val());">
+          </span>
+        </label>
+        <input type="text" class="form-control" id="upload-file-info" readonly>
+      </div>
+
+      <button class="my-3 bg-blue btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+
+</section>
+
+
+{% endblock %}

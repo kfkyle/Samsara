@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">{{ main.main_title }}</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="{% url 'home' %}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'what_we_do' %}" class="nav-link">{{ what_we_do.main_title }}</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'careers' %}" class="nav-link">{{ careers.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

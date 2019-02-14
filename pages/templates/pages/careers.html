@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HOME SECTION -->
+<header id="home-section" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="dark-overlay">
+    <div class="home-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h4>{{ main.main_title }}</h4>
+            <hr>
+          </div>
+        </div>
+      </div>
+      </div>
+      {% include 'partials/_carousel.html' %}
+    </div>
+</header>
+
+
+<section id="explore-head-section"class="banner bg-primary" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">{{ careers.sub_title}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Services -->
+
+
+<section id="explore-section" class="bg-light text-muted p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6 text-center m-0">
+        <img class="img-fluid shadow p-0 mb-4 border border-primary" src="{{ careers.display.url }}" alt="">
+      </div>
+      <div class="col-md-12 col-lg-6 text-center px-4">
+        <h3 class="pb-4">{{ careers.tag_line }}</h3>
+        <hr class="blue-rule mb-4">
+        <p>{{ careers.content_1 }}</p>
+        <p>{{ careers.content_2 }}</p>
+        <p>{{ careers.content_3 }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Banner 1 -->
+
+<section id="create-head-section" class="banner-2 bg-primary" style="background-image: url('{{ main.back_drop.url }}')">
+
+  <div class="flex-container py-5">
+
+    <div class= "box mx-3">
+      <img src="{{ careers.img_1.url }}" class="img-fluid shadow border border-primary">
+      <div class="text-center my-3 px-2">
+        <h3>{{ careers.sub_header_1 }}</h3>
+          <p>{{ careers.img_text_1 }}</p>
+      </div>
+    </div>
+
+    <div class= "box mx-3">
+      <img src="{{ careers.img_2.url }}" class="img-fluid shadow border border-primary">
+      <div class="text-center my-3 px-2">
+        <h3>{{ careers.sub_header_2 }}</h3>
+          <p>{{ careers.img_text_2 }}</p>
+      </div>
+    </div>
+
+    <div class= "box mx-3">
+      <img src="{{ careers.img_3.url }}" class="img-fluid shadow border border-primary"">
+      <div class="text-center my-3 px-2">
+        <h3>{{ careers.sub_header_3 }}</h3>
+          <p>{{ careers.img_text_3 }}</p>
+      </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section id="create-head-section" class="bg-light text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="p-3 mt-5">
+          <h1>{{ job_ad.header }}</h1>
+          <hr>
+        </div>
+
+
+        <section id="apply" class="bg-light text-muted">
+            <div class="container">
+              <h5 class="text-center py-3">Choose Your City</h5>
+            </div>
+          <div class="flex-container p-5">
+
+            {% for apply in apply_objects %}
+              <div class="city-box">
+                <a href="/apply/{{ apply.id }}" class="btn bg-blue">{{ apply.city }}</a>
+
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+
+        <div class="p-3">
+          <h2>{{ job_ad.title }}</h2>
+        </div>
+        <div class="p-3">
+          <p>{{ job_ad.ad }}</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="p-3">
+          <h3><u>{{ job_ad.sub_header_1 }}</u></h3>
+          <p>{{ job_ad.bullet_1 }}</p>
+          <p>{{ job_ad.bullet_2 }}</p>
+          <p>{{ job_ad.bullet_3 }}</p>
+          <p>{{ job_ad.bullet_4 }}</p>
+          <p>{{ job_ad.bullet_5 }}</p>
+        </div>
+        <div class="p-3">
+          <h3><u>{{ job_ad.sub_header_2 }}</u></h3>
+          <p>{{ job_ad.second_bullet_1 }}</p>
+          <p>{{ job_ad.second_bullet_2 }}</p>
+          <p>{{ job_ad.second_bullet_3 }}</p>
+          <p>{{ job_ad.second_bullet_4 }}</p>
+          <p>{{ job_ad.second_bullet_5 }}</p>
+        </div>
+        <div class="p-3">
+          <h3><u>{{ job_ad.sub_header_3 }}</u></h3>
+          <p>{{ job_ad.third_bullet_1 }}</p>
+          <p>{{ job_ad.third_bullet_2 }}</p>
+          <p>{{ job_ad.third_bullet_3 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="apply" class="bg-light text-muted">
+    <div class="container">
+      <h3 class= text-center>{{ job_ad.apply }}</h3>
+      <h5 class="text-center py-3">Choose Your City</h5>
+      <hr>
+    </div>
+  <div class="flex-container p-5">
+
+    {% for apply in apply_objects %}
+      <div class="city-box">
+        <a href="/apply/{{ apply.id }}" class="btn bg-blue">{{ apply.city }}</a>
+
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock %}

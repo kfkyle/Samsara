@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!-- HOME SECTION -->
+<header id="home-section" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="dark-overlay">
+
+    <div class="home-inner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h4>{{ main.main_title }}</h4>
+            <hr>
+          </div>
+        </div>
+      </div>
+      </div>
+      {% include 'partials/_carousel.html' %}
+    </div>
+</header>
+
+<!-- WHY US -->
+<section id="explore-head-section"class="banner bg-primary" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">Welcome</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="explore-section" class="bg-light text-muted py-4 pb-5">
+  <div class="container">
+    <div class="row">
+      {% for service in services %}
+      <div class="col-md-4 text-center pt-3">
+        <i class="{{ service.icon }} display-4 blue py-3"></i>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.summary }}...</p>
+        <a href="{% url 'what_we_do' %}" class="btn bg-blue">Read More</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Banner 1 -->
+<section id="create-head-section" class="bg-primary banner-2" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">{{ banner_1.title }}</h1>
+          <p class="lead">{{ banner_1.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AboutUs -->
+<section id="create-head-section" class="bg-light text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="pt-5 pb-4">
+          <h1>{{ about_us.title }}</h1>
+          <p class="lead">{{ about_us.sub_title}}</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="explore-section" class="bg-light text-muted pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 text-center">
+        <img class="shadow img-fluid p-0 mb-4 border border-primary" src="{{ about_us.display.url }}" alt="" alt="">
+      </div>
+      <div class="col-md-12 col-lg-8 my-auto text-center">
+        <h3>{{ about_us.sub_header_1 }}</h3>
+        <p>{{ about_us.content_1 }}</p>
+        <h3 class="p-2">{{ about_us.sub_header_2 }}</h3>
+        <p>{{ about_us.content_2 }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Banner 2 -->
+<section id="share-head-section" class="bg-primary banner-2" style="background-image: url('{{ main.back_drop.url }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">{{ banner_2.title }}</h1>
+          <p class="lead">{{ banner_2.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Careers -->
+<section id="create-head-section" class="bg-light text-muted">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="pt-5 pb-4">
+          <h1>{{ careers.title }}</h1>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="explore-section" class="bg-light text-muted pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 text-center">
+        <img class="shadow img-fluid p-0 mb-4 border border-primary" src="{{ careers.display.url }}" alt="" alt="">
+      </div>
+      <div class="col-md-12 col-lg-8 my-auto text-center">
+        <h3>{{ careers.sub_header_1 }}</h3>
+        <p>{{ careers.content_1 }}</p>
+        <h3 class="p-2">{{ careers.sub_header_2 }}</h3>
+        <p>{{ careers.content_2 }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+{% endblock %}

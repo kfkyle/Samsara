@@ -1,0 +1,37 @@
+#header {
+  height: 50px;
+  background: rgba(6, 70, 173, 0.8);
+  color: #fff;
+}
+
+
+#branding h1{
+ color: #fff;
+}
+
+a:link, a:visited {
+  color: rgba(6, 70, 173, 0.8);
+}
+
+div.breadcrumbs {
+  background: rgba(0, 0, 0, 0.8);
+}
+ caption {
+  background: rgba(6, 70, 173, 0.8);
+  color: #fff;
+ }
+
+.module h2, .module caption, .inline-group h2 {
+  background: rgba(6, 70, 173, 0.8);
+  color: #fff;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+  background: rgba(6, 70, 173, 0.8);
+  color: #fff;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+  background: rgba(6, 70, 173, 0.8);
+  color: #fff;
+}
