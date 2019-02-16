@@ -19,9 +19,8 @@ icon_choices = (
 class Main(models.Model):
     section = models.CharField(max_length=80, editable=False, default='main')
     main_title = models.CharField(max_length=80)
-    tag_line = models.CharField(max_length=80, null=True)
     back_drop = models.ImageField(upload_to ='photos/%Y/%m/%d')
-    side_display = models.ImageField(upload_to ='photos/%Y/%m/%d')
+
 
     def __str__(self):
         return self.main_title
@@ -32,18 +31,6 @@ class Main(models.Model):
 
 
 
-
-# Why Us
-class WhyUs(models.Model):
-    section = models.CharField(max_length=80, editable=False, default='Why Us')
-    title = models.CharField(max_length=80)
-    sub_title = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = "WhyUs"
 
 
 
