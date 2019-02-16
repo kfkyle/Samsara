@@ -31,9 +31,6 @@ class Main(models.Model):
 
 
 
-
-
-
 # Services
 class Service(models.Model):
 

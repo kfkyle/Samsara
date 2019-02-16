@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 from .forms import ContactForm
-from .models import Main, WhyUs, Service, Career, AboutUs, Banner1, Banner2, WhatWeDo, JobAd, Carousel, Apply
+from .models import Main, Service, Career, AboutUs, Banner1, Banner2, WhatWeDo, JobAd, Carousel, Apply
 
 
 from django.http import HttpResponseRedirect
@@ -20,7 +20,6 @@ from django.core.mail import EmailMultiAlternatives
 #Home
 def home(request):
     main = Main.objects.get(section = 'main')
-    why_us = WhyUs.objects.get(section = 'Why Us')
     services = Service.objects.all()
     banner_1 = Banner1.objects.get(section = 'Banner 1')
     careers = Career.objects.get(section = 'Careers')
@@ -31,7 +30,6 @@ def home(request):
 
     context = {
     'main': main,
-    'why_us': why_us,
     'banner_1':banner_1,
     'services': services,
     'banner_2':banner_2,
@@ -47,7 +45,6 @@ def home(request):
 
 #What We Do
 def what_we_do(request):
-    why_us = WhyUs.objects.get(section = 'Why Us')
     what_we_do = WhatWeDo.objects.get(section = 'What We Do')
     services = Service.objects.all()
     main = Main.objects.get(section = 'main')
@@ -62,7 +59,6 @@ def what_we_do(request):
     'services': services,
     'main': main,
     'careers': careers,
-    'why_us': why_us,
     'carousel': carousel,
     }
 
@@ -72,7 +68,6 @@ def what_we_do(request):
 
 #Careers
 def careers(request):
-    why_us = WhyUs.objects.get(section = 'Why Us')
     careers = Career.objects.get(section = 'Careers')
     about_us = AboutUs.objects.get(section = 'About Us')
     main = Main.objects.get(section = 'main')
@@ -87,7 +82,6 @@ def careers(request):
     'about_us': about_us,
     'main': main,
     'job_ad': job_ad,
-    'why_us': why_us,
     'what_we_do': what_we_do,
     'carousel': carousel,
     'apply_objects': apply_objects,
@@ -103,7 +97,7 @@ def apply(request, apply_id):
 
 
 
-    why_us = WhyUs.objects.get(section = 'Why Us')
+
     careers = Career.objects.get(section = 'Careers')
     about_us = AboutUs.objects.get(section = 'About Us')
     main = Main.objects.get(section = 'main')
@@ -141,7 +135,6 @@ def apply(request, apply_id):
     'about_us': about_us,
     'main': main,
     'job_ad': job_ad,
-    'why_us': why_us,
     'what_we_do': what_we_do,
     'carousel': carousel,
     'apply': apply,
