@@ -25,11 +25,20 @@ SECRET_KEY = 'e0dcsswr^)ljj(_o9nkd342^ngl!&gm7ortd_fa3xq@mx$rpv^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    
+]
 
 DATABASES = {
-
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'websitedb',
+        'USER': 'kyle',
+        'PASSWORD': 'Soccer123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 
@@ -45,6 +54,7 @@ INSTALLED_APPS = [
     'pages',
     'crispy_forms',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

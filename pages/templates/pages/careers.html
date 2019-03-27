@@ -34,10 +34,7 @@
 
 
 
-
 <!-- Services -->
-
-
 <section id="explore-section" class="bg-light text-muted p-4">
   <div class="container">
     <div class="row">
@@ -93,29 +90,35 @@
 
 
 
-
-
 <section id="create-head-section" class="bg-light text-muted">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="p-3 mt-5">
           <h1>{{ job_ad.header }}</h1>
-          <hr>
+        </div>
         </div>
 
 
         <section id="apply" class="bg-light text-muted">
             <div class="container">
-              <h5 class="text-center py-3">Choose Your City</h5>
+              <h2 class="text-center py-3 ">Our Offices</h2>
+              <hr>
             </div>
           <div class="flex-container p-5">
 
             {% for apply in apply_objects %}
-              <div class="city-box">
-                <a href="/apply/{{ apply.id }}" class="btn bg-blue">{{ apply.city }}</a>
-
-              </div>
+            <div class= "city-box mx-3">
+                <img src="{{ apply.img.url }}" class="img-fluid shadow border border-primary">
+                <div class="text-center my-3 px-2">
+                  <h3>{{ apply.city }}</h3>
+                  <p>{{ apply.address_line_1 }}</p>
+                  <p>{{ apply.address_line_2 }}</p>
+                  <p>{{ apply.address_line_3 }}</p>
+                  <p>{{ apply.zip }}</p>
+                  <a href="/apply/{{ apply.id }}" class="btn bg-blue">Contact</a>
+                </div>
+              </div>        
             {% endfor %}
           </div>
         </section>
@@ -127,7 +130,7 @@
         <div class="p-3">
           <p>{{ job_ad.ad }}</p>
         </div>
-      </div>
+      
       <div class="col-md-12">
         <div class="p-3">
           <h3><u>{{ job_ad.sub_header_1 }}</u></h3>
@@ -155,24 +158,4 @@
     </div>
   </div>
 </section>
-
-
-<section id="apply" class="bg-light text-muted">
-    <div class="container">
-      <h3 class= text-center>{{ job_ad.apply }}</h3>
-      <h5 class="text-center py-3">Choose Your City</h5>
-      <hr>
-    </div>
-  <div class="flex-container p-5">
-
-    {% for apply in apply_objects %}
-      <div class="city-box">
-        <a href="/apply/{{ apply.id }}" class="btn bg-blue">{{ apply.city }}</a>
-
-      </div>
-    {% endfor %}
-
-  </div>
-</section>
-
 {% endblock %}

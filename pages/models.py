@@ -167,31 +167,31 @@ class WhatWeDo(models.Model):
 #Job Ad
 
 class JobAd(models.Model):
-    header = models.CharField(max_length=80, null=True)
-    section = models.CharField(max_length=80, editable=False, default='Job Ad')
-    title = models.CharField(max_length=80)
-    ad = models.TextField()
+    header = models.CharField(max_length=80, blank=True, null=True)
+    section = models.CharField(max_length=80, null=True, blank=True, editable=False, default='Job Ad')
+    title = models.CharField(max_length=80, blank=True, null=True)
+    ad = models.TextField(blank=True, null=True)
 
-    sub_header_1 = models.CharField(max_length=80, null=True)
-    bullet_1 = models.CharField(max_length=80, null=True)
-    bullet_2 = models.CharField(max_length=80, null=True)
-    bullet_3 = models.CharField(max_length=80, null=True)
-    bullet_4 = models.CharField(max_length=80, null=True)
-    bullet_5 = models.CharField(max_length=80, null=True)
+    sub_header_1 = models.CharField(max_length=80, blank=True, null=True)
+    bullet_1 = models.CharField(max_length=80, blank=True, null=True)
+    bullet_2 = models.CharField(max_length=80, blank=True, null=True)
+    bullet_3 = models.CharField(max_length=80, blank=True, null=True)
+    bullet_4 = models.CharField(max_length=80, blank=True, null=True)
+    bullet_5 = models.CharField(max_length=80, blank=True, null=True)
 
-    sub_header_2 = models.CharField(max_length=80, null=True)
-    second_bullet_1 = models.CharField(max_length=80, null=True)
-    second_bullet_2 = models.CharField(max_length=80, null=True)
-    second_bullet_3 = models.CharField(max_length=80, null=True)
-    second_bullet_4 = models.CharField(max_length=80, null=True)
-    second_bullet_5 = models.CharField(max_length=80, null=True)
+    sub_header_2 = models.CharField(max_length=80, blank=True, null=True)
+    second_bullet_1 = models.CharField(max_length=80, blank=True, null=True)
+    second_bullet_2 = models.CharField(max_length=80, blank=True, null=True)
+    second_bullet_3 = models.CharField(max_length=80, blank=True, null=True)
+    second_bullet_4 = models.CharField(max_length=80, blank=True, null=True)
+    second_bullet_5 = models.CharField(max_length=80, blank=True, null=True)
 
-    sub_header_3 = models.CharField(max_length=80, null=True)
-    third_bullet_1 = models.CharField(max_length=80, null=True)
-    third_bullet_2 = models.CharField(max_length=80, null=True)
-    third_bullet_3 = models.CharField(max_length=80, null=True)
+    sub_header_3 = models.CharField(max_length=80, blank=True, null=True)
+    third_bullet_1 = models.CharField(max_length=80, blank=True, null=True)
+    third_bullet_2 = models.CharField(max_length=80, blank=True, null=True)
+    third_bullet_3 = models.CharField(max_length=80, blank=True, null=True)
 
-    apply = models.CharField(max_length=80, null=True)
+    apply = models.CharField(max_length=80, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -200,11 +200,8 @@ class JobAd(models.Model):
 
 class Carousel(models.Model):
         section = models.CharField(max_length=80, editable=False, default='Carousel')
-
         header_1 = models.CharField(max_length=80, null=True)
-
         header_2 = models.CharField(max_length=80, null=True)
-
         header_3 = models.CharField(max_length=80, null=True)
 
         def __str__(self):
@@ -216,6 +213,12 @@ class Apply(models.Model):
     section = models.CharField(max_length=80, editable=False, default='Apply')
     city = models.CharField(max_length=80, null=True)
     receiving_email = models.CharField(max_length=80, null=True)
+    img = models.ImageField(upload_to ="photos/%Y/%m/%d", blank=True, null=True) 
+
+    address_line_1 = models.CharField(max_length=80, blank=True, null=True)
+    address_line_2 = models.CharField(max_length=80, blank=True, null=True)
+    address_line_3 = models.CharField(max_length=80, blank=True, null=True)
+    zip_code = models.CharField(max_length=80, blank=True, null=True)
 
 
     def __str__(self):
